@@ -16,7 +16,6 @@ public class ApiSteps {
     }
 
     @Given("a new booking is created via the API")
-    @When("a new booking is created via the API")
     public void createBooking() {
         ctx.booking = BookingFactory.random();
         ctx.response = BookingApi.create(ctx.booking);
