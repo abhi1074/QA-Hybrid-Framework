@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Hybrid QA Regression Suite" parallel="classes" thread-count="3" verbose="1">
+    <listeners>
+        <listener class-name="com.qa.framework.core.RetryListener"/>
+    </listeners>
+
+    <test name="UI - Selenium">
+        <packages><package name="com.qa.framework.tests.ui"/></packages>
+    </test>
+    <test name="API - RestAssured">
+        <packages><package name="com.qa.framework.tests.api"/></packages>
+    </test>
+    <test name="DB - SQL validation">
+        <packages><package name="com.qa.framework.tests.db"/></packages>
+    </test>
+    <test name="UI - Playwright">
+        <packages><package name="com.qa.framework.tests.playwright"/></packages>
+    </test>
+    <test name="BDD - Cucumber">
+        <classes><class name="com.qa.framework.runners.TestRunner"/></classes>
+    </test>
+</suite>
