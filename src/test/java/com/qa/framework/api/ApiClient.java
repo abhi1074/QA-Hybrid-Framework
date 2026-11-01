@@ -16,7 +16,7 @@ public final class ApiClient {
         return new RequestSpecBuilder()
                 .setBaseUri(ConfigReader.get("api.base.url"))
                 .setContentType(ContentType.JSON)
-                .setAccept(ContentType.JSON)
+                .setAccept("application/json")
                 .addFilter(new AllureRestAssured())
                 .build();
     }
